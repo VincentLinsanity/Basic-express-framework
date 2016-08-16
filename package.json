@@ -1,13 +1,14 @@
 {
   "name": "basic-express-framework",
   "description": "Provide a basic project to start a express web server",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/VincentLinsanity/basic-express-framework"
   },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "gulp"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -15,16 +16,14 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "morgan": "~1.6.1"
   },
   "devDependencies": {
+    "eslint": "^3.3.1",
     "gulp": "^3.9.0",
     "gulp-debug": "^2.1.2",
-    "gulp-jscs": "^3.0.2",
-    "gulp-jshint": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^2.2.0",
-    "mongoose": "^4.0.5",
     "should": "^6.0.3",
     "supertest": "^1.0.1"
   }

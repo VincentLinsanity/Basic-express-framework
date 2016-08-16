@@ -8,8 +8,8 @@ https://github.com/VincentLinsanity/basic-express-framework.git
 Current Version: 0.0.0
 
 ## Maintainer
-###Vincent Lin
-###x123356@gmail.com
+### Vincent Lin
+### x123356@gmail.com
 
 # Pre Requirement
 - Nodejs
@@ -38,7 +38,7 @@ run server
 $ npm start
 ```
 
-# Quick Start by Docker(not yet already)
+# Quick Start by Docker
 get docker-compose file
 ```bash
 $ mkdir -p /home/docker/compose/basic-express-framework
@@ -52,37 +52,31 @@ $ docker-compose up -d
 ```
 
 # Compose Setting
-- listen port 3000:3000 for http protocol
-- listen port 443:443 for hhtps protocol
+- listen port 80:3000 for http protocol
 - link mongo and expose port 27017
-- link redis and expose port 6379
 
 ```
 basicexpressframework:
   image: vincentlinsanity/basicexpressframework:latest
   links:
     - "mongo:mongo"
-    - "redis:redis"
   ports:
-    - "3000:3000"
-    - "443:443"
+    - "80:3000"
 mongo:
-  image: vincentlinsanity/mongodb:3.0.3
+  image: vincentlinsanity/mongodb:3.0.7
   expose:
     - 27017
   volumes:
     - '/home/docker/compose/meta/data/mongo:/data/db'
-redis:
-  image: vincentlinsanity/redis:3.0.3
-  expose:
-    - 6379
-  volumes:
-    - '/home/docker/compose/meta/data/redis:/data'
 ```
-##environment example
+## environment example
 - MONGO_ADDR = '10.36.62.101';
 - MONGO_PORT = 27017;
 - REDIS_ADDR = '10.36.62.101';
 - REDIS_PORT = 6379;
 
-#Build Docker Images(not yet already)
+# Build Docker Images
+```bash
+$ make docker-build
+$ docker run -d -p 80:3000 vincentlin/basicexpressframework:latest
+```

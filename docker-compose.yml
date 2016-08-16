@@ -1,4 +1,4 @@
-basicexpressreactframework:
+basicexpressframework:
   image: vincentlinsanity/basicexpressframework:latest
   links:
     - "mongo:mongo"
@@ -7,14 +7,8 @@ basicexpressreactframework:
     - "3000:3000"
     - "443:443"
 mongo:
-  image: vincentlinsanity/mongodb:3.0.3
+  image: mongodb:3.0.7
   expose:
     - 27017
   volumes:
     - '/home/docker/compose/meta/data/mongo:/data/db'
-redis:
-  image: vincentlinsanity/redis:3.0.3
-  expose:
-    - 6379
-  volumes:
-    - '/home/docker/compose/meta/data/redis:/data'
